@@ -1,0 +1,100 @@
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+
+nav {
+    padding: 1;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin: 2em;
+}
+
+.link {
+    display: block;
+    padding: 2ch;
+    border-radius: 2px;
+    background-color: beige;
+}
+
+.link:hover {
+    background-color: gray;
+    color: white;
+}
+
+header {
+    margin: 0;
+    padding: 2em;
+    background-color: yellowgreen;
+    text-align: center;
+}
+
+.definitions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.definitions>div {
+    font-size: 12pt;
+    padding: 2em;
+    text-align: justify;
+    background-color: yellowgreen;
+    margin: 2px;
+}
+
+.operators {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.operators>div {
+    font-size: 12pt;
+    padding: 2em;
+    background-color: yellowgreen;
+    margin: 2px;
+}
+
+#right {
+    float: right;
+    margin: 2px;
+    padding: 2ch;
+    border: 2px solid black;
+}
+
+strong {
+    background-color: lightblue;
+}
+
+#naming {
+    list-style: lower-roman;
+}
+
+#flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.flex-box {
+    font-size: 12pt;
+    padding: 1em;
+    background-color: yellowgreen;
+    margin: 2px;
+    text-align: center;
+}
+
+.left {
+    float: left;
+    margin: 2ch;
+}
+
+.right {
+    float: right;
+    margin: 2ch;
+    border: 1px solid black;
+    padding: 15px;
+}

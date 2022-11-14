@@ -28,14 +28,19 @@ li {
     font-family: Garamond, Times, serif;
 }
 
+table {
+    width: 100%;
+}
+
 #main {
+    display: block;
     width: 75%;
     padding: 2ch;
     margin: auto;
     background-color: black;
-    display: block;
     color: white;
 }
+
 
 .links{
     background-color: slategray;
