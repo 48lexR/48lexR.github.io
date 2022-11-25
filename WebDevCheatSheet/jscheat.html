@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Javascript Cheat Sheet</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Cage's Notes</h1>
+    </header>
+    <main>
+        <nav>
+            <a href="DNDindex.html">DND Website (DO NOT CLICK)</a>
+            <a href="#primitive" class="link">Primitive Data Types</a>
+            <a href="#functions" class="link">Functions</a>
+            <a href="#logic" class="link">Logic</a>
+            <a href="#DOM" class="link">The DOM</a>
+            <a href="#input" class="link">Input</a>
+            <a href="#HTMLElements" class="link">HTML Elements</a>
+        </nav>
+        <article>
+            <h1 id="Top">Javascript Cheat Sheet</h1>
+            <p>Javascript helps us implement reactivity and interactivity to our webpage.</p>
+            <h2 id="primitive">Primitive Data Types &amp; Variables</h2>
+
+            <p>There are several &quot;primitive&quot; data types that are how data is encoded. Use
+                <code>typeOf()</code> to return the type of a value.</code>
+            </p>
+
+            <div class="definitions">
+                <div>
+                    <strong>Number:</strong>
+                    A number is a numerical value and is processed as such. A number can be mathematically changed.
+                </div>
+                <div><strong>String &amp; Character:</strong>
+                    A character is a non-number encoded by surrounding it in quotes. A string is a list of characters.
+                </div>
+
+                <div><strong>Boolean: </strong>
+                    A boolean value is a value which is either <code>true</code> or <code>false</code>.</div>
+            </div>
+            <aside id="right">
+                <p>Some Common Operators.</p>
+                <div class="operators">
+                    <div><code>+</code> is the Addition operator.</div>
+                    <div><code>-</code> is the Subtraction operator.</div>
+                    <div><code>*</code> is the Multiplication operator.</div>
+                    <div><code>/</code> is the Division operator.</div>
+                    <div><code>%</code> is the Modulus operator.</div>
+                    <div><code>=</code> is the Assignment operator.</div>
+                </div>
+            </aside>
+            <p>A variable is a keyword for a value, assigned by the keyword <code>let</code> or <code>const</code>.
+                Variables can be manipulated by operators. For example, the following code adds two variables:
+            </p>
+            <pre>
+                let num1 = 2;
+                let num2 = 2;
+                console.log(num1 + num2);
+                (Expected output: 4)
+            </pre>
+            <p>Please note: The <strong>assignment operator</strong> (=) is not an &quot;equals sign.&quot;</p>
+
+            <p>You can change between data types by using certain functions. For example,
+                <code>Number(variable/string)</code> takes a variable or string and returns a number. This is
+                particularly useful for user input that requires math, so you would need to store the data as a number,
+                not a string. For example:
+            <pre>
+                <code>
+                    let miles = prompt("Mileage:");
+                    miles = Number(miles);
+                    let km = miles * 1.609;
+                    console.log(km);
+                </code>
+            </pre>
+            will convert a prompted number into kilometers by converting <code>miles</code> into a number first.</p>
+
+            <p><strong>Protip:</strong> Variable naming conventions tend to be
+            <ol id="naming">
+                <li>Intuitive</li>
+                <li>Easy to type</li>
+                <li>Typed in Camel Case</li>
+                <li>Started without numbers</li>
+            </ol>
+            </p>
+
+            <h4>Strings</h4>
+
+            <p>Strings are also particularly useful. They can start with either &quot; or ' or `, but it must close with
+                the same one where it opens. The ` string can contain variables. For example:
+                <code>`Hello ${name}`</code> accesses a variable "name."
+            </p>
+
+            <p>Strings are stored as lists of characters, and they can be accessed like they are accessed in arrays. For
+                example, in the string <code>let getName = "Cage"; console.log(getName[1]);</code> accesses the letter
+                at index 1 of &quot;Cage&quot;. That letter is a. Indexes always start at <strong>0</strong>, never 1.
+            </p>
+
+            <p>Strings have a ton of useful features, called <strong>methods</strong> and <strong>attributes.</strong>
+                Methods are functions. For example, <code>&#60;str&#62;.substring(a, b)</code> returns all the
+                characters between indexes a and b. <code>&#60;str&#62;.length</code> returns the number of characters
+                in the string.</p>
+
+            <h2 id="functions" style="clear: right;">Functions</h2>
+            <p>A function is a callable piece of data that gives the computer more instructions on what to do. For
+                example:
+            <pre></pre>
+
+            <code>
+                function run(){<br>
+                    &nbsp;let name = prompt("What is your name?");<br>
+                    &nbsp;console.log("Hello " + name + "!");<br>
+                }
+            </code>
+            </pre>
+            </p>
+            <button onclick="run()" id="namePrompt"> Press to see this code!</button>
+            <p>The code defines &quot;run()&quot; as a function that does two actions: prompt the user to enter a name
+                (stored as name) and return that name in the console, along with a message: Hello [name]! A function
+                always has a name, and takes any number of variables (stored inside the parentheses). All function calls
+                include parentheses. </p>
+
+            <p>A function definition looks like this:
+            <pre>
+                        function &#60;name&#62; (&#60;args&#62;, ...){
+                            //logic goes here 
+                            return value; // optional
+                        }
+                    </pre>
+            </p>
+            <p>And a function call looks like this:
+            <pre>
+                        &#60;name&#62;(&#60;args&#62;, ...);
+                    </pre>
+            </p>
+            <h2 id="logic">Logic</h2>
+            <aside class="left">
+                <div id="flex-wrapper">
+                    <p>Some common operators in conditionals.</p>
+
+                    <div class="flex-box">
+                        <p><code>!</code></p>
+                        <p>NOT</p>
+                    </div>
+                    <div class="flex-box">
+                        <p><code>&&</code></p>
+                        <p>AND</p>
+                    </div>
+                    <div class="flex-box">
+                        <p><code>||</code></p>
+                        <p>OR</p>
+                    </div>
+                    <div class="flex-box">
+                        <p><code>&#62;</code></p>
+                        <p>Greater-than</p>
+                    </div>
+                    <div class="flex-box">
+                        <p><code>&#60;</code></p>
+                        <p>Less-than</p>
+                    </div>
+                    <div class="flex-box">
+                        <p><code>===</code></p>
+                        <p>Equals</p>
+                    </div>
+                    <div class="flex-box">
+                        <p><code>!==</code></p>
+                        <p>Does not Equal</p>
+                    </div>
+                </div>
+            </aside>
+            <p>Logic relies on booleans and the evaluation thereof to create <strong>conditionals.</strong> These are
+                very powerful in coding, because they help our programs become versatile.</p>
+            <p>For example, || returns <strong>true</strong> if one of the conditions on either side of it is true, but
+                && returns true only if the conditions on both sides are true. ! will invert whatever follows it. </p>
+            <p>Conditionals are particularly useful in if-statements to direct the flow of our program. An if-statement
+                only evaluates the code within it if a condition is met.</p>
+            <p>An if-statement can also contain an "else" statement, that will only run if the rest of the if statement
+                is untrue. An if-else statement combines both of these, so the code will go through and check all the
+                conditions before finding the code it needs to run. It will only test one condition at once.</p>
+
+            <h1 style="clear: left;">The Document Object Module: Making Webpages Interactive</h1>
+            <p>Javascript is primarily used to make webpages interactive, and this is done through the &quot;document
+                object module&quot; or DOM. The DOM is an object&dash;a data type which has both properties and methods
+                linked to the main object by periods&dash;whose properties are listed in the order which
+                they appear. For example, to access the <code>&#60;body&#62;</code> tag of the document, the javascript
+                must be: <code>document.body</code>, which will return the &quot;body&quot; as an object.</p>
+            <p>It is customary to access elements based on their class (using
+                <code>document.getElementsByClassName(*args)</code>) or id (using
+                <code>document.getElementById(args)</code>. The former will return a <strong>list</strong> of elements
+                that all have the class name specified in args, and the latter will return a single element that has the
+                id specified in args.
+            </p>
+            <h2 id="input">Input</h2>
+            <aside class="right">
+                <p>Here are some common input types:</p>
+                <ul>
+                    <li>Radio: <br>&nbsp; a &quot;select one of the following&quot; series of buttons.</li>
+                    <li>Checkbox: <br>&nbsp; a &quot;select any of the following&quot; series of buttons.</li>
+                    <li>Text: <br>&nbsp; a &quot;type a short answer&quot; area.</li>
+                    <li>Checkbox: <br>&nbsp; a &quot;select any of the following&quot; series of buttons.</li>
+
+
+                </ul>
+            </aside>
+            <p>Often times, HTML pages will have input areas for user interaction, and these are done with the
+                <code>&#60;input&#62;</code> tag. A &quot;type&quot; attribute can be used to change the type of input.
+                Listed aside are some common input types. Inputs can be accessed with the javascript code
+                <code>element.value</code>, which will return the value of the HTML input.
+            </p>
+            <h2 id="HTMLElements" style="clear: right;">HTML Elements</h2>
+            <p>An HTML Element is a data type in javascript that has certain properties. This includes:
+            <ul>
+                <li>HTMLElement.style
+                    <ul>
+                        <li>This accesses the styling of an element.</li>
+                    </ul>
+                </li>
+                <li>HTMLElement.textContent
+                    <ul>
+                        <li>This accesses the text in between tags of an HTML element.</li>
+                    </ul>
+                </li>
+                <li>HTMLElement.className
+                    <ul>
+                        <li>This returns the class name of an element as a string.</li>
+                    </ul>
+                </li>
+                <li>Etc...</li>
+            </ul>
+            </p>
+            <p>All HTML Elements can take an <code>onclick="function()"</code> attribute, however JavaScript creates a
+                way to add an event handler in its code. Add
+                <code>HTMLElement.addEventListener("event", function());</code>. Both have relatively the same effect.
+            </p>
+            <p>We can access HTMLElements by using functions that &quot;grab&quot; them. For example:
+                <code>document.getElementsByClassName("HTMLElements.className")</code> will return a list of HTML
+                Elements. (A list is simply a bunch of values bound together. An individual value can be accessed by
+                using brackets next to the name of the list. For example <code>list[0]</code>. Indexing starts at 0!)
+            </p>
+        </article>
+    </main>
+</body>
+
+</html>
